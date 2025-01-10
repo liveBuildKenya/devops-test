@@ -44,10 +44,9 @@ services:
       - springboot-network
 
   test-presentation:
-    image: test-presentation-app:latest
+    image: livedevkenya/test-presentation-app:latest
     container_name: core-test-angular
     restart: always
-    build: ../src/frontend/test-presentation
     ports:
       - 4200:80
     environment:

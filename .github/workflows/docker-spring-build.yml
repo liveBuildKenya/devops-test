@@ -1,4 +1,4 @@
-name: Build and Push Docker Images
+name: Build and Push Spring Docker Image
 
 on:
   push:
@@ -33,7 +33,7 @@ jobs:
       - name: Build Spring Boot application 
         run: | 
           cd ./src/backend/core 
-          mvn clean install
+          mvn compile
 
       - name: Log in to Docker Registry
         run: echo "${{ env.DOCKER_PASSWORD }}" | docker login ${{ env.REGISTRY }} -u ${{ env.DOCKER_USERNAME }} --password-stdin
