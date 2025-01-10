@@ -39,15 +39,5 @@ jobs:
       - name: Log in to Docker Registry
         run: echo "${{ env.DOCKER_PASSWORD }}" | docker login ${{ env.REGISTRY }} -u ${{ env.DOCKER_USERNAME }} --password-stdin
 
-      - name: Build Spring App Image
-        run: |
-          docker build -t ${{ env.REGISTRY }}/${{ env.REPOSITORY }}/test-spring-app:latest ./src/backend/core
-          docker push ${{ env.REGISTRY }}/${{ env.REPOSITORY }}/test-spring-app:latest
-
-      - name: Build Test Presentation Image
-        run: |
-          docker build -t ${{ env.REGISTRY }}/${{ env.REPOSITORY }}/test-presentation-app:latest ./src/frontend/test-presentation
-          docker push ${{ env.REGISTRY }}/${{ env.REPOSITORY }}/test-presentation-app:latest
-
       - name: Log out from Docker Registry
         run: docker logout
