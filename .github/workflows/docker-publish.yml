@@ -32,7 +32,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Build Spring Boot application 
-        run: ./mvn clean package
+        run: ./src/backend/core/.mvn clean package
 
       - name: Log in to Docker Registry
         run: echo "${{ env.DOCKER_PASSWORD }}" | docker login ${{ env.REGISTRY }} -u ${{ env.DOCKER_USERNAME }} --password-stdin
