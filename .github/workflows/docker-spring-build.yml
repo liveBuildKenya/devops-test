@@ -33,7 +33,7 @@ jobs:
       - name: Build Spring Boot application 
         run: | 
           cd ./src/backend/core
-          export  MONGO_URI=${{ secrets.DOCKER_USERNAME }}
+          export  MONGO_URI=${{ secrets.MONGO_URI }}
           mvn package
 
       - name: Log in to Docker Registry
