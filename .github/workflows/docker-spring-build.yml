@@ -12,7 +12,6 @@ jobs:
   build-and-push:
     name: Build and Push Docker Images
     runs-on: ubuntu-latest
-
     env:
       REGISTRY: docker.io
       REPOSITORY: livedevkenya  # Replace with your username or organization
