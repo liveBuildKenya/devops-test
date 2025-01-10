@@ -31,14 +31,10 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
-      - name: Change directory to core 
-        run: cd ./src/backend/core
-
-      - name: Change directory to core 
-        run: ls .
-
       - name: Build Spring Boot application 
-        run: mvn clean package
+        run: | 
+          cd ./src/backend/core 
+          mvn clean package
 
       - name: Log in to Docker Registry
         run: echo "${{ env.DOCKER_PASSWORD }}" | docker login ${{ env.REGISTRY }} -u ${{ env.DOCKER_USERNAME }} --password-stdin
