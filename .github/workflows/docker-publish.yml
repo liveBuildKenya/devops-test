@@ -31,8 +31,11 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
+      - name: Change directory to core 
+        run: cd ./src/backend/core
+
       - name: Build Spring Boot application 
-        run: ./src/backend/core/.mvn clean package
+        run: mvn clean package
 
       - name: Log in to Docker Registry
         run: echo "${{ env.DOCKER_PASSWORD }}" | docker login ${{ env.REGISTRY }} -u ${{ env.DOCKER_USERNAME }} --password-stdin
