@@ -1,4 +1,4 @@
-name: Build and Deploy Angular Docker Image
+name: Build and Push Angular Docker Image
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
         REGISTRY: docker.io
-        REPOSITORY: livedevkenya  # Replace with your username or organization
+        REPOSITORY: livedevkenya
 
     steps:
       - name: Checkout code
