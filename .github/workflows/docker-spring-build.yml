@@ -33,7 +33,7 @@ jobs:
       - name: Build Spring Boot application 
         run: | 
           cd ./src/backend/core 
-          mvn compile
+          mvn package
 
       - name: Log in to Docker Registry
         run: echo "${{ env.DOCKER_PASSWORD }}" | docker login ${{ env.REGISTRY }} -u ${{ env.DOCKER_USERNAME }} --password-stdin
