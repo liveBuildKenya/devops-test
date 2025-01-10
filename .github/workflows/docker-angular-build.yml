@@ -35,7 +35,7 @@ jobs:
 
       - name: Build Test Presentation Image
         run: |
-          docker build -t ${{ env.REGISTRY }}/${{ env.REPOSITORY }}/test-presentation-app:latest ./src/frontend/test-presentation
+          docker build -t ${{ env.REGISTRY }}/${{ env.REPOSITORY }}/test-presentation-app:latest ./src/frontend/test-presentation/dist/test-presentation/browser
           docker push ${{ env.REGISTRY }}/${{ env.REPOSITORY }}/test-presentation-app:latest
 
       - name: Log out from Docker Registry
