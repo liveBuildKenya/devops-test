@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-presentation
+  namespace: core-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-presentation
+  template:
+    metadata:
+      labels:
+        app: test-presentation
+    spec:
+      containers:
+        - name: test-presentation
+          image: test-presentation-app:latest
+          env:
+            - name: API_URL
+              value: "http://spring-app:8080"
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-presentation
+  namespace: core-app
+spec:
+  selector:
+    app: test-presentation
+  ports:
+    - protocol: TCP
+      port: 4200
+      targetPort: 80
