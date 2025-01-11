@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: test-presentation
-  namespace: core-app
+  namespace: mongo-express
 spec:
   replicas: 1
   selector:
@@ -15,18 +15,20 @@ spec:
     spec:
       containers:
         - name: test-presentation
-          image: test-presentation-app:latest
-          env:
-            - name: API_URL
-              value: "http://spring-app:8080"
+          image: livedevkenya/test-presentation-app:latest
           ports:
             - containerPort: 80
+          env:
+            - name: API_URL
+              value: "http://spring-app-service.mongo-express:53178/"
+      restartPolicy: Always
+
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: test-presentation
-  namespace: core-app
+  name: test-presentation-service
+  namespace: mongo-express
 spec:
   selector:
     app: test-presentation
@@ -34,3 +36,4 @@ spec:
     - protocol: TCP
       port: 4200
       targetPort: 80
+  type: NodePort
