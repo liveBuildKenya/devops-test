@@ -20,7 +20,7 @@ spec:
             - containerPort: 80
           env:
             - name: API_URL
-              value: "http://spring-app-service.mongo-express:53178/"
+              value: "http://spring-app-service.mongo-express:55702/"
       restartPolicy: Always
 
 ---

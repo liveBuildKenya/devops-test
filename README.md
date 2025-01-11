@@ -136,8 +136,22 @@ To clone the repository, follow these steps:
 - Challenge: Ensuring network communication between the Angular frontend and Spring Boot backend versions.
 
 
+## Screenshots
+![alt text](assets/image.png)
+![alt text](assets/image-1.png)
+![alt text](assets/image-2.png)
+![alt text](assets/image-3.png)
+![alt text](assets/image-4.png)
+![alt text](assets/image-5.png)
+![alt text](assets/image-6.png)
+![alt text](assets/image-7.png)
+
 ### Contact Information
-Name: **Ezra Mungai** 
-Phone: **+254790801990** 
-LinkedIn: [Mungai, Ezra](https://www.linkedin.com/in/ezra-mungai-494892a4/) 
+
+Name: **Ezra Mungai**
+
+Phone: **+254790801990**
+
+LinkedIn: [Mungai, Ezra](https://www.linkedin.com/in/ezra-mungai-494892a4/)
+
 Email: mungaiezrakaruoya@live.com
